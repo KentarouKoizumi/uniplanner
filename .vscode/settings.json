@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "**/.*_cache": true,
+    "**/__pycache__": true
+  },
+
+  "python.analysis.extraPaths": [
+    "/usr/local/lib/python3.10/site-packages/"
+  ],
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.diagnosticMode": "workspace",
+
+  "python.languageServer": "Pylance",
+
+  "[python]": {
+    "editor.tabSize": 4,  // インデントレベルは4
+    "editor.formatOnSave": true,  // 保存時に自動整形を行う
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "python.formatting.provider": "none",
+  "isort.args": ["--profile", "black"],
+}

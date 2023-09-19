@@ -1,0 +1,8 @@
+{
+  "ignoreWords": [],
+  "words": [
+    "fastapi",
+    "pydantic",
+    "sqlalchemy"
+  ]
+}
