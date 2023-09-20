@@ -21,8 +21,8 @@ if config.config_file_name is not None:
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 
-from app.database.settings import Base
-from app.models import *
+from app.domain.models import *
+from app.infrastructure.dataAccess.database.settings import Base
 
 target_metadata = [Base.metadata]
 
@@ -71,9 +71,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()

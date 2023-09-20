@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from .base import BaseModel
 
 
-class PlanModel(BaseModel):
+class Plan(BaseModel):
     __tablename__ = "plans"
 
     name = Column(String)
@@ -12,8 +12,8 @@ class PlanModel(BaseModel):
     is_weekly = Column(Boolean, nullable=False)
 
     users = relationship(
-        "UserModel", back_populates="plan", cascade="save-update, delete"
+        "User", back_populates="plan", cascade="save-update, delete"
     )
     schedules = relationship(
-        "ScheduleModel", back_populates="plan", cascade="save-update, delete"
+        "Schedule", back_populates="plan", cascade="save-update, delete"
     )

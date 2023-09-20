@@ -12,6 +12,7 @@ uvicorn = "^0.23.2"
 sqlalchemy = "^2.0.20"
 alembic = "^1.12.0"
 psycopg2 = "^2.9.7"
+dependency-injector = "^4.41.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -22,13 +23,13 @@ isort = "^5.12.0"
 mypy = "^1.5.1"
 
 [tool.black]
-line-length = 79
+line-length = 119
 
 [tool.isort]
 profile = "black"
 multi_line_output = 3
 include_trailing_comma = true
-line_length = 79
+line_length = 119
 
 [build-system]
 requires = ["poetry-core"]

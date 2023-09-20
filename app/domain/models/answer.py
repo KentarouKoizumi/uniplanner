@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from .base import BaseModel
 
 
-class AnswerModel(BaseModel):
+class Answer(BaseModel):
     __tablename__ = "answers"
 
     answer = Column(
@@ -19,10 +19,10 @@ class AnswerModel(BaseModel):
     )
 
     user = relationship(
-        "UserModel", back_populates="answers", cascade="save-update, delete"
+        "User", back_populates="answers", cascade="save-update, delete"
     )
     schedule = relationship(
-        "ScheduleModel",
+        "Schedule",
         back_populates="answers",
         cascade="save-update, delete",
     )

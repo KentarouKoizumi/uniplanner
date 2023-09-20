@@ -5,7 +5,7 @@ from sqlalchemy import DateTime
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.schema import Column
 
-from app.database.settings import Base
+from app.infrastructure.dataAccess.database.settings import Base
 
 
 class BaseModel(Base):

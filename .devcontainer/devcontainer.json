@@ -24,7 +24,9 @@
         "ms-python.isort",
         "ms-python.flake8",
         "GitHub.copilot",
-        "usernamehw.errorlens"
+        "usernamehw.errorlens",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
       ]
     }
   }
