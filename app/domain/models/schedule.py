@@ -10,13 +10,7 @@ class Schedule(BaseModel):
 
     date = Column(Date, nullable=False)
     period = Column(Integer, nullable=False)
-    plan_id = Column(
-        UUID(as_uuid=True), ForeignKey("plans.id"), nullable=False
-    )
+    event_id = Column(UUID(as_uuid=True), ForeignKey("events.id"), nullable=False)
 
-    plan = relationship(
-        "Plan", back_populates="schedules", cascade="save-update, delete"
-    )
-    answers = relationship(
-        "Answer", back_populates="schedule", cascade="save-update, delete"
-    )
+    event = relationship("Event", back_populates="schedules", cascade="save-update, delete")
+    answers = relationship("Answer", back_populates="schedule", cascade="save-update, delete")

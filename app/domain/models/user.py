@@ -9,11 +9,7 @@ class User(BaseModel):
     __tablename__ = "users"
 
     name = Column(String, nullable=False)
-    plan_id = Column(UUID(as_uuid=True), ForeignKey("plans.id"))
+    event_id = Column(UUID(as_uuid=True), ForeignKey("events.id"))
 
-    plan = relationship(
-        "Plan", back_populates="users", cascade="save-update, delete"
-    )
-    answers = relationship(
-        "Answer", back_populates="user", cascade="save-update, delete"
-    )
+    event = relationship("Event", back_populates="users", cascade="save-update, delete")
+    answers = relationship("Answer", back_populates="user", cascade="save-update, delete")
